@@ -1,0 +1,23 @@
+{
+  "title": "04 - Database",
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Active Connections",
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 6 },
+      "targets": [
+        { "expr": "pg_stat_activity_count" }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Slow Queries",
+      "gridPos": { "x": 0, "y": 6, "w": 12, "h": 6 },
+      "targets": [
+        { "expr": "pg_slow_queries_total" }
+      ]
+    }
+  ]
+}

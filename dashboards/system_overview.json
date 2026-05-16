@@ -1,0 +1,31 @@
+{
+  "title": "00 - System Overview",
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Total Requests",
+      "gridPos": { "x": 0, "y": 0, "w": 6, "h": 4 },
+      "targets": [
+        { "expr": "sum(http_requests_total)" }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Error Rate",
+      "gridPos": { "x": 6, "y": 0, "w": 6, "h": 4 },
+      "targets": [
+        { "expr": "sum(rate(http_requests_total{status=~\"5..\"}[5m]))" }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Request Rate",
+      "gridPos": { "x": 0, "y": 4, "w": 12, "h": 6 },
+      "targets": [
+        { "expr": "rate(http_requests_total[1m])" }
+      ]
+    }
+  ]
+}

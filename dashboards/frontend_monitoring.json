@@ -1,0 +1,23 @@
+{
+  "title": "03 - Frontend Monitoring",
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Page Load Time",
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 6 },
+      "targets": [
+        { "expr": "frontend_page_load_time_seconds" }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "JS Errors",
+      "gridPos": { "x": 0, "y": 6, "w": 12, "h": 6 },
+      "targets": [
+        { "expr": "sum(frontend_js_errors_total)" }
+      ]
+    }
+  ]
+}
